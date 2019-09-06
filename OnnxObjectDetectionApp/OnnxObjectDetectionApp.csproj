@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ML\OnnxModels\TinyYolo2_model.onnx" />
+    <None Remove="ML\OnnxModels\yolov3.onnx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.3.1" />
+    <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.3.1" />
+    <PackageReference Include="Microsoft.ML.OnnxTransformer" Version="1.3.1" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.1.1" />
+    <PackageReference Include="OpenCvSharp3-AnyCPU" Version="4.0.0.20181129" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ML\OnnxModels\yolov3.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ML\OnnxModels\TinyYolo2_model.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
